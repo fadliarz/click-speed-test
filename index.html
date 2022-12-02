@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click Speed Test</title>
+
+        <style>
+            #people-counter{
+                margin: auto;
+                width: 500px;
+                padding: 100px;
+                border-style: solid;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            var total_clicks = 0;
+
+            function doIncrement(){
+                if(total_clicks == 0){
+                    setTimeout(showResult, 10000)
+                }
+                total_clicks++;
+            }
+
+            function showResult(){
+                document.getElementById("increment-button").style.display = "none";
+                document.getElementById("result").innerHTML = 
+                "Result: <br>" + total_clicks/10 + " CPS";
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div id="people-counter">
+            <h1>Click to start test</h1>
+            <p id="result"></p>
+            <button id="increment-button" style="width:100px; height:100px;" onclick="doIncrement()">Start</button>
+        </div>
+    </body>
+</html>
